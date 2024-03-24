@@ -1,0 +1,67 @@
+.navbar {
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    padding: 10px 30px;
+    color: #49557e;
+    border: 1px solid tomato;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navbar button:hover {
+    background: tomato;
+    color: white;
+}
+
+.navbar .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid tomato;
+
+}
+/* adding effect on nav bar li tags  */
+.navbar-menu li:hover {
+    color: tomato;
+    cursor: pointer;
+}
+
+.navbar_search_icon {
+    position: relative;
+}
+
+.navbar_search_icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
