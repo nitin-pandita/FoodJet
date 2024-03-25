@@ -38,3 +38,23 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+@media (max-width: 1050px) {
+
+    .header-container {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header-container {
+        max-width: 65%;
+    }
+
+    .header-container p {
+        display: none;
+    }
+    .header-container bottom {
+        padding: 2vw 4vw;
+    }
+}

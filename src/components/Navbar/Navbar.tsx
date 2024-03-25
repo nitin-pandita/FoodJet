@@ -1,45 +1,51 @@
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-import { useState } from "react";
-const Navbar = () => {
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/StoreContext";
+const Navbar = ({setShowLoginPopup}) => {
   const [menu, setMenu] = useState("contact-us");
+  const {getTotalCardAmount} = useContext(StoreContext)
   return (
     <div className="navbar">
-      <img src="/img/swiggy.png" alt="" className="logo" />
+      <Link to='/'><img src="/img/swiggy.png" alt="" className="logo" /></Link>
       <ul className="navbar-menu">
-        <li
+        <Link to='/'
           onClick={() => setMenu("home")}
           className={menu == "home" ? "active" : ""}
         >
           Home
-        </li>
-        <li
+        </Link>
+        <a
+        href="#explore-menu"
           onClick={() => setMenu("menu")}
           className={menu == "menu" ? "active" : ""}
         >
           Menu
-        </li>
-        <li
+        </a>
+        <a
+        href="#app-download"
           onClick={() => setMenu("mobile")}
           className={menu == "mobile" ? "active" : ""}
         >
           Mobile
-        </li>
-        <li
+        </a>
+        <a
+        href="#footer"
           onClick={() => setMenu("contact-us")}
           className={menu == "contact-us" ? "active" : ""}
         >
           Contact Us
-        </li>
+        </a>
       </ul>
       <div className="navbar-right">
         {/* search icons */}
         <img src={assets.search_icon} alt="" />
         <div className="navbar_search_icon">
-          <img src={assets.basket_icon} alt="" />
-          <div className="dot"></div>
+          <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
+          <div className={getTotalCardAmount() === 0 ? "" : "dot"}></div>
         </div>
-        <button>Sign In</button>
+        <button onClick={() => setShowLoginPopup(true)}>Sign In</button>
       </div>
     </div>
   );
